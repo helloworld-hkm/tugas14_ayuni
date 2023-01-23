@@ -1,3 +1,40 @@
+if(window.openDatabase){
+    var mydb = openDatabase("Batik", '1.0', "WebSQL Database", 2 * 1024 * 1024);
+    mydb.transaction(function(tx){
+      tx.executeSql("create table if not exists user(username varchar(25) primary key, password varchar(25))");
+      tx.executeSql("insert into user values ('nyuni', 'haii')");
+    });
+  }else{
+    alert("Browser tidak mendukung WebSQL");
+  }
+  
+  function login(){
+    var username = document.getElementById("username").value;
+    mydb.transaction(function(tx){
+      tx.executeSql("select * from user where username = ?", [username], validasi);
+    });
+    }
+
+    function validasi(transaction, results){
+      var pass = document.getElementById("password").value;
+    if(results.rows.length == 0){
+      alert("username salah");
+    }else{
+      var row = results.rows.item(0);
+      if(row.password == pass){
+        myNavigator.pushPage('homepage');
+      }else{
+        alert("Password salah");
+      }
+    }
+    reset();
+  }
+  
+  function reset(){
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+  }
+
 window.fn = {};
 window.fn.open = function () {
     var menu = document.getElementById('menu');

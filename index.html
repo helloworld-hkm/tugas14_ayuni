@@ -10,493 +10,532 @@
 </head>
 
 <body>
-    <ons-splitter>
-        <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+    <ons-navigator id="myNavigator" page="login" animation="fade"></ons-navigator>
+    <template id="login">
+      <ons-page id="form-page">
+        <div style="text-align: left; margin-top: 30%;">
+          <ons-card>
+            <ons-list>
+              <center><img src="foto/Macam-macam Batik.jpg" width="50%"></center>
+              <ons-list-item>
+                <ons-row>
+                  <ons-col width="30%" text-align="center">
+                    <label>Username</label>
+                  </ons-col>
+                  <ons-col>
+                    <ons-input id="username" placeholder="Username"></ons-input>
+                  </ons-col>
+                </ons-row>
+              </ons-list-item>
+              <ons-list-item>
+                <ons-row>
+                  <ons-col width="30%">
+                    <label>Password</label>
+                  </ons-col>
+                  <ons-col>
+                    <ons-input type="password" id="password" placeholder="Password"></ons-input>
+                  </ons-col>
+                </ons-row>
+              </ons-list-item>
+            </ons-list>
+            <center><ons-button onclick="login()">Login</ons-button></center>
+          </ons-card>
+        </div>
+      </ons-page>
+    </template>
+    <template id="homepage">
+    <ons-page>
+        <ons-splitter>
+            <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+                <ons-page>
+                    <ons-toolbar>
+                        <div class="center">
+                            <span class="fa fa-shop"></span> RAFAH BATIK's
+                        </div>
+                    </ons-toolbar>
+                    <ons-list>
+                        <ons-list-item onclick="fn.load('home.html')" tappable>
+                            Home
+                        </ons-list-item>
+                        <ons-list-item onclick="fn.load('shop.html')" tappable>
+                            Shop 
+                        </ons-list-item>
+                        <ons-list-item onclick="fn.load('user.html')" tappable>
+                            User
+                        </ons-list-item>
+                    </ons-list>
+                </ons-page>
+            </ons-splitter-side>
+            <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+        </ons-splitter>
+    
+        <template id="home.html">
             <ons-page>
                 <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="fn.open()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
                     <div class="center">
-                        <span class="fa fa-shop"></span> RAFAH BATIK's
+                        RAFAH BATIK
                     </div>
                 </ons-toolbar>
-                <ons-list>
-                    <ons-list-item onclick="fn.load('home.html')" tappable>
-                        Home
-                    </ons-list-item>
-                    <ons-list-item onclick="fn.load('shop.html')" tappable>
-                        Shop 
-                    </ons-list-item>
-                    <ons-list-item onclick="fn.load('user.html')" tappable>
-                        User
-                    </ons-list-item>
-                </ons-list>
+                <h1
+                    style="text-align: center; ;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight: bolder; padding-top: 20px;">
+                    SELAMAT DATANG <br> DI RAFAH BATIK
+                </h1>
+                <p style="text-align: center;">menyediakan baju baju batik berkualitas dan stylish cocok di pakai semua kalangan dengan harga terjangkau dan ramah di kantong dapat di pakai baik acara formal maupun non formal</p>
+                <div style="text-align: center;">
+                    <ons-button onclick="fn.load('shop.html')">Belanja Sekarang !</ons-button>
+                </div>
             </ons-page>
-        </ons-splitter-side>
-        <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
-    </ons-splitter>
-
-    <template id="home.html">
-        <ons-page>
-            <ons-toolbar>
-                <div class="left">
-                    <ons-toolbar-button onclick="fn.open()">
-                        <ons-icon icon="md-menu"></ons-icon>
-                    </ons-toolbar-button>
-                </div>
-                <div class="center">
-                    RAFAH BATIK
-                </div>
-            </ons-toolbar>
-            <h1
-                style="text-align: center; ;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight: bolder; padding-top: 20px;">
-                SELAMAT DATANG <br> DI RAFAH BATIK
-            </h1>
-            <p style="text-align: center;">Menyediakan baju baju batik berkualitas</p>
-            <div style="text-align: center;">
-                <ons-button onclick="fn.load('shop.html')">Belanja Sekarang !</ons-button>
-            </div>
-        </ons-page>
-    </template>
-    <template id="user.html">
-        <ons-page>
-            <ons-toolbar>
-                <div class="left">
-                    <ons-toolbar-button onclick="fn.open()">
-                        <ons-icon icon="md-menu"></ons-icon>
-                    </ons-toolbar-button>
-                </div>
-                <div class="center">
-                    User Profile
-                </div>
-            </ons-toolbar>
-            
-            <ons-list >
-                <ons-list-item>
-                  <div class="left">
-                    <img class="list-item__thumbnail" icon="md-face" src="foto/ayaaang.jpg">
-                  </div>
-                  <div class="center">
-                    <span class="list-item__title"> ayrafah</span><span class="list-item__subtitle"> member Gold</span>
-                </ons-list-item>
-                </div>
-                </ons-list-item>
-                <ons-list-item>
-                  <div class="left">
-                    <ons-icon icon="md-email">
-                  </div>
-                  <div class="center">
-                    <ons-input value="haiayra@gmail.com"></ons-input>
-                  </div>
-                </ons-list-item>
-                <ons-list-item>
-                  <div class="left">
-                    <ons-icon icon="fa-phone">
-                  </div>
-                  <div class="center">
-                  <ons-input value="0823 2437 5565"></ons-input>
-                  </div>
-                </ons-list-item>
-                <ons-list-item>
-                  <div class="left">
-                    <ons-icon icon="md-home">
-                  </div>
-                  <div class="center">
-                   <ons-input value="Jl. Kena Roasting No.9999999 Tertampar Kenyataan"> </ons-input>
-                  </div>
-                </ons-list-item>
-                <ons-list-item>
-                  <div class="center" id="logout">
-                    <ons-button onclick="window.location.reload()" modifier="large">Logout</ons-button>
-                  </div>
-                </ons-list-item>
-              </ons-list>
-        </ons-page>
-    </template>
-
-    <template id="shop.html">
-        <ons-page>
-            <ons-toolbar>
-                <div class="left">
-                    <ons-toolbar-button onclick="fn.load('home.html')">
-                        <ons-icon icon="md-home"></ons-icon>
-                    </ons-toolbar-button>
-                </div>
-                <div class="center">
-                    SHOPPING AREA
-                </div>
-
-            </ons-toolbar>
-            <ons-tabbar id="tabbar" swipeable position="auto">
-                <ons-tab page="daftar.html" label=" Batik" icon="md-collection-item">
-                </ons-tab>
-                <ons-tab page="pesan.html" label="Pesan" icon="md-shopping-cart-plus">
-                </ons-tab>
-                <ons-tab page="deskripsi.html" label="Riwayat Pesan" icon="shopping-cart">
-                </ons-tab>
-        </ons-page>
-    </template>
-
-    <template id="daftar.html">
-        <ons-page id="Tab1">
-            <ons-card>
-                <img src="foto/Batik Mega Mendung.jpg" alt="Onsen UI" style="width: 100%">
-                <div class="title">
-                    Batik Mega Mendung
-                </div>
-                <div class="content">
-                    <div>
-                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
+        </template>
+        <template id="user.html">
+            <ons-page>
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="fn.open()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
                     </div>
-                </div>
-            </ons-card>
-
-            <ons-card>
-                <img src="foto/Batik Keraton.webp" alt="Onsen UI" style="width: 100%">
-                <div class="title">
-                    Batik Keraton
-                </div>
-                <div class="content">
-                    <div>
-                               <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
+                    <div class="center">
+                        User Profile
                     </div>
-                </div>
-            </ons-card>
-
-            <ons-card>
-                <img src="foto/Batik Parang.webp" alt="Onsen UI" style="width: 100%">
-                <div class="title">
-                    Batik Parang
-                </div>
-                <div class="content">
-                    <div>
-                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
-                    </div>
-                </div>
-            </ons-card>
-
-            <ons-card>
-                <img src="foto/Batik Simbut.jpg" alt="Onsen UI" style="width: 100%">
-                <div class="title">
-                    Batik Simbut
-                </div>
-                <div class="content">
-                    <div>
-                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
-                    </div>
-                </div>
-            </ons-card>
-
-            <ons-card>
-                <img src="foto/Batik Sogan.jpg" alt="Onsen UI" style="width: 100%">
-                <div class="title">
-                    Batik Sogan
-                </div>
-                <div class="content">
-                    <div>
-                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
-                    </div>
-                </div>
-            </ons-card>
-
-            <ons-card>
-                <img src="foto/Batik Gentongan.webp" alt="Onsen UI" style="width: 100%">
-                <div class="title">
-                    Batik Gentongan
-                </div>
-                <div class="content">
-                    <div>
-                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
-                    </div>
-                </div>
-            </ons-card>
-
-            <ons-card>
-                <img src="foto/Batik Sedapur.webp" alt="Onsen UI" style="width: 100%">
-                <div class="title">
-                    Batik Sedapur
-                </div>
-                <div class="content">
-                    <div>
-                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
-                    </div>
-                </div>
-            </ons-card>
-        </ons-page>
-    </template>
-
-    <template id="deskripsi.html">
-        <ons-page id="Tab2">
-            <div style="text-align: left; margin-top: 20px; padding: 10px;">
-                <ons-card>
-                    <ons-list>
-                        <ons-list-header>Detail Pesanan</ons-list-header>
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label for="desc_id">Id Pesanan</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-input id="desc_id" placeholder="" readonly></ons-input>
-                                </ons-col>
-                            </ons-row>
-                        </ons-list-item>
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label for="id">Tanggal</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-input id="desc_tanggal" placeholder="" readonly></ons-input>
-                                </ons-col>
-                            </ons-row>
-                        </ons-list-item>
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label>Batik</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-input id="desc_batik" placeholder="" readonly></ons-input>
-                                </ons-col>
-                            </ons-row>
-                        </ons-list-item>
-
-
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label>Size</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-input id="desc_size" placeholder="" readonly></ons-input>
-                                </ons-col>
-                            </ons-row>
-                        </ons-list-item>
-
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label>Pilihan Warna</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-input id="desc_warna" placeholder="" readonly></ons-input>
-                                </ons-col>
-                            </ons-row>
-                        </ons-list-item>
-
-
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label>Jumlah</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-input id="desc_jumlah" placeholder="Jumlah" readonly></ons-input>
-                            </ons-row>
-                        </ons-list-item>
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label for="id">total Bayar</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-input id="desc_total" placeholder="" readonly></ons-input>
-                                </ons-col>
-                            </ons-row>
-                        </ons-list-item>
-
-                    </ons-list>
-                </ons-card>
-            
-
-
-            </div>
-            <script>
-          
-                document.getElementById('desc_id').value =localStorage.getItem("id");
-                document.getElementById('desc_batik').value =localStorage.getItem("nama");
-                document.getElementById('desc_size').value =localStorage.getItem("size");
-                document.getElementById('desc_jumlah').value =localStorage.getItem("jumlah");
-                document.getElementById('desc_tanggal').value = localStorage.getItem("tanggal");
-                document.getElementById('desc_total').value =localStorage.getItem("total");
-                document.getElementById('desc_warna').value =localStorage.getItem("warna");
-            </script>
-        </ons-page>
-
-    </template>
-    <template id="detail.html">
-        <ons-page id="Tab2">
-            <ons-toolbar>
-                <div class="left">
-                    <ons-toolbar-button onclick="fn.load('shop.html')">
-                        <ons-icon icon="md-arrow-left"></ons-icon>
-                    </ons-toolbar-button>
-                </div>
-                <div class="center">
-                   Detail Produk
-                </div>
-
-            </ons-toolbar>
-           <ons-card>
-            <div class="">
-             
-                <ul>
-                <li>Bahan katun Halus</li>
-                <li>Jahitan Rapih</li>
-                <li>Murah Berkualitas</li>
-              </ul>
-                <h4>Size:M,L,XL,XXL,XXXL</h4>
-               <ons-row>
-                <ons-col width="15%">
-                  M
-                </ons-col>
-                <ons-col>
-                  : LD 98 Cm
-                </ons-col>
-               </ons-row>
-               <ons-row>
-                <ons-col width="15%">
-                  L
-                </ons-col>
-                <ons-col>
-                  : LD 102 Cm
-                </ons-col>
-               </ons-row>
-               <ons-row>
-                <ons-col width="15%">
-                  XL
-                </ons-col>
-                <ons-col>
-                  : LD 104 Cm
-                </ons-col>
-               </ons-row>
-               <ons-row>
-                <ons-col width="15%">
-                  XXL
-                </ons-col>
-                <ons-col>
-                  : LD 108 Cm
-                </ons-col>
-               </ons-row>
-  
-                <h4>Pilihan Warna</h4>
-                <ul>
-                  <li>Biru</li>
-                  <li>Merah</li>
-                  <li>Coklat</li>
-                  <li>Emas</li>
-                  <li>Hitam</li>
-                  <li>Kuning</li>
-                </ul>
+                </ons-toolbar>
                 
-  
-  
-              </div>
-           </ons-card>
-           
-        </ons-page>
-
-    </template>
-    <template id="pesan.html">
-        <ons-page id="Tab2">
-            <div style="text-align: left; margin-top: 20px; padding: 10px;">
+                <ons-list >
+                    <ons-list-item>
+                      <div class="left">
+                        <img class="list-item__thumbnail" icon="md-face" src="foto/ayaaang.jpg">
+                      </div>
+                      <div class="center">
+                        <span class="list-item__title"> ayrafah</span><span class="list-item__subtitle"> member Gold</span>
+                    </ons-list-item>
+                    </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                      <div class="left">
+                        <ons-icon icon="md-email">
+                      </div>
+                      <div class="center">
+                        <ons-input value="haiayra@gmail.com"></ons-input>
+                      </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                      <div class="left">
+                        <ons-icon icon="fa-phone">
+                      </div>
+                      <div class="center">
+                      <ons-input value="0823 2437 5565"></ons-input>
+                      </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                      <div class="left">
+                        <ons-icon icon="md-home">
+                      </div>
+                      <div class="center">
+                       <ons-input value="Jl. Kena Roasting No.9999999 Tertampar Kenyataan"> </ons-input>
+                      </div>
+                    </ons-list-item>
+                    <ons-list-item>
+                      <div class="center" id="logout">
+                        <ons-button onclick="window.location.reload()" modifier="large">Logout</ons-button>
+                      </div>
+                    </ons-list-item>
+                  </ons-list>
+            </ons-page>
+        </template>
+    
+        <template id="shop.html">
+            <ons-page>
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="fn.load('home.html')">
+                            <ons-icon icon="md-home"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
+                    <div class="center">
+                        SHOPPING AREA
+                    </div>
+    
+                </ons-toolbar>
+                <ons-tabbar id="tabbar" swipeable position="auto">
+                    <ons-tab page="daftar.html" label=" Batik" icon="md-collection-item">
+                    </ons-tab>
+                    <ons-tab page="pesan.html" label="Pesan" icon="md-shopping-cart-plus">
+                    </ons-tab>
+                    <ons-tab page="deskripsi.html" label="Riwayat Pesan" icon="shopping-cart">
+                    </ons-tab>
+            </ons-page>
+        </template>
+    
+        <template id="daftar.html">
+            <ons-page id="Tab1">
                 <ons-card>
-                    <ons-list>
-                        <ons-list-header>Pemesanan</ons-list-header>
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label for="id">Id Pesanan</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-input id="id" placeholder=""></ons-input>
-                                </ons-col>
-                            </ons-row>
-                        </ons-list-item>
-                       
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label>Batik</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-select id="Batik">
-                                        <option value="-">-</option>
-                                        <option value="batik mega mendung">BATIK MEGA MENDUNG</option>
-                                        <option value="batik keraton">BATIK KERATON</option>
-                                        <option value="batik parang">BATIK PARANG</option>
-                                        <option value="batik simbut">BATIK SIMBUT</option>
-                                        <option value="batik sogan">BATIK SOGAN</option>
-                                        <option value="batik gentongan">BATIK GENTONGAN</option>
-                                        <option value="batik sedapur">BATIK SEDAPUR</option>
-
-                                    </ons-select>
-                                </ons-col>
-                            </ons-row>
-                        </ons-list-item>
-
-
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label>Size</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-select id="Size">
-                                        <option value="-">-</option>
-
-                                        <option value="M">M (48.000)</option>
-                                        <option value="L">L (52.000)</option>
-                                        <option value="XL">XL (63.000)</option>
-                                        <option value="XXL">XXL (74.000)</option>
-                                        <option value="XXXL">XXXL (87.000)</option>
-                                    </ons-select>
-                                </ons-col>
-                            </ons-row>
-                        </ons-list-item>
-
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label>Pilihan Warna</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-select id="Pilihan_Warna">
-                                        <option value="-">-</option>
-                                        <option value="biru">Biru</option>
-                                        <option value="merah">Merah</option>
-                                        <option value="hitam">Hitam</option>
-                                        <option value="coklat">Coklat</option>
-                                        <option value="emas">Emas</option>
-                                        <option value="kuning">Kuning</option>
-                                    </ons-select>
-                                </ons-col>
-                            </ons-row>
-                        </ons-list-item>
-
-
-                        <ons-list-item>
-                            <ons-row>
-                                <ons-col width="25%">
-                                    <label>Jumlah</label>
-                                </ons-col>
-                                <ons-col>
-                                    <ons-input id="jumlah" placeholder="Jumlah"></ons-input>
-                            </ons-row>
-                        </ons-list-item>
-
-                    </ons-list>
+                    <img src="foto/Batik Mega Mendung.jpg" alt="Onsen UI" style="width: 100%">
+                    <div class="title">
+                        Batik Mega Mendung
+                    </div>
+                    <div class="content">
+                        <div>
+                            <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
+                        </div>
+                    </div>
                 </ons-card>
-                <div style="text-align: center; padding: 7px;" id="checkout">
-                    <ons-button modifier="large" onclick="simpan()">CHECKOUT</ons-button>
+    
+                <ons-card>
+                    <img src="foto/Batik Keraton.webp" alt="Onsen UI" style="width: 100%">
+                    <div class="title">
+                        Batik Keraton
+                    </div>
+                    <div class="content">
+                        <div>
+                                   <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
+                        </div>
+                    </div>
+                </ons-card>
+    
+                <ons-card>
+                    <img src="foto/Batik Parang.webp" alt="Onsen UI" style="width: 100%">
+                    <div class="title">
+                        Batik Parang
+                    </div>
+                    <div class="content">
+                        <div>
+                            <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
+                        </div>
+                    </div>
+                </ons-card>
+    
+                <ons-card>
+                    <img src="foto/Batik Simbut.jpg" alt="Onsen UI" style="width: 100%">
+                    <div class="title">
+                        Batik Simbut
+                    </div>
+                    <div class="content">
+                        <div>
+                            <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
+                        </div>
+                    </div>
+                </ons-card>
+    
+                <ons-card>
+                    <img src="foto/Batik Sogan.jpg" alt="Onsen UI" style="width: 100%">
+                    <div class="title">
+                        Batik Sogan
+                    </div>
+                    <div class="content">
+                        <div>
+                            <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
+                        </div>
+                    </div>
+                </ons-card>
+    
+                <ons-card>
+                    <img src="foto/Batik Gentongan.webp" alt="Onsen UI" style="width: 100%">
+                    <div class="title">
+                        Batik Gentongan
+                    </div>
+                    <div class="content">
+                        <div>
+                            <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
+                        </div>
+                    </div>
+                </ons-card>
+    
+                <ons-card>
+                    <img src="foto/Batik Sedapur.webp" alt="Onsen UI" style="width: 100%">
+                    <div class="title">
+                        Batik Sedapur
+                    </div>
+                    <div class="content">
+                        <div>
+                            <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
+                        </div>
+                    </div>
+                </ons-card>
+            </ons-page>
+        </template>
+    
+        <template id="deskripsi.html">
+            <ons-page id="Tab2">
+                <div style="text-align: left; margin-top: 20px; padding: 10px;">
+                    <ons-card>
+                        <ons-list>
+                            <ons-list-header>Detail Pesanan</ons-list-header>
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label for="desc_id">Id Pesanan</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="desc_id" placeholder="" readonly></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label for="id">Tanggal</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="desc_tanggal" placeholder="" readonly></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label>Batik</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="desc_batik" placeholder="" readonly></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+    
+    
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label>Size</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="desc_size" placeholder="" readonly></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+    
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label>Pilihan Warna</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="desc_warna" placeholder="" readonly></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+    
+    
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label>Jumlah</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="desc_jumlah" placeholder="Jumlah" readonly></ons-input>
+                                </ons-row>
+                            </ons-list-item>
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label for="id">total Bayar</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="desc_total" placeholder="" readonly></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+    
+                        </ons-list>
+                    </ons-card>
+                
+    
+    
                 </div>
-
-
-
-
-            </div>
-
-        </ons-page>
+                <script>
+              
+                    document.getElementById('desc_id').value =localStorage.getItem("id");
+                    document.getElementById('desc_batik').value =localStorage.getItem("nama");
+                    document.getElementById('desc_size').value =localStorage.getItem("size");
+                    document.getElementById('desc_jumlah').value =localStorage.getItem("jumlah");
+                    document.getElementById('desc_tanggal').value = localStorage.getItem("tanggal");
+                    document.getElementById('desc_total').value =localStorage.getItem("total");
+                    document.getElementById('desc_warna').value =localStorage.getItem("warna");
+                </script>
+            </ons-page>
+    
+        </template>
+        <template id="detail.html">
+            <ons-page id="Tab2">
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="fn.load('shop.html')">
+                            <ons-icon icon="md-arrow-left"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
+                    <div class="center">
+                       Detail Produk
+                    </div>
+    
+                </ons-toolbar>
+               <ons-card>
+                <div class="">
+                 
+                    <ul>
+                    <li>Bahan katun Halus</li>
+                    <li>Jahitan Rapih</li>
+                    <li>Murah Berkualitas</li>
+                  </ul>
+                    <h4>Size:M,L,XL,XXL,XXXL</h4>
+                   <ons-row>
+                    <ons-col width="15%">
+                      M
+                    </ons-col>
+                    <ons-col>
+                      : LD 98 Cm
+                    </ons-col>
+                   </ons-row>
+                   <ons-row>
+                    <ons-col width="15%">
+                      L
+                    </ons-col>
+                    <ons-col>
+                      : LD 102 Cm
+                    </ons-col>
+                   </ons-row>
+                   <ons-row>
+                    <ons-col width="15%">
+                      XL
+                    </ons-col>
+                    <ons-col>
+                      : LD 104 Cm
+                    </ons-col>
+                   </ons-row>
+                   <ons-row>
+                    <ons-col width="15%">
+                      XXL
+                    </ons-col>
+                    <ons-col>
+                      : LD 108 Cm
+                    </ons-col>
+                   </ons-row>
+      
+                    <h4>Pilihan Warna</h4>
+                    <ul>
+                      <li>Biru</li>
+                      <li>Merah</li>
+                      <li>Coklat</li>
+                      <li>Emas</li>
+                      <li>Hitam</li>
+                      <li>Kuning</li>
+                    </ul>
+                    
+      
+      
+                  </div>
+               </ons-card>
+               
+            </ons-page>
+    
+        </template>
+        <template id="pesan.html">
+            <ons-page id="Tab2">
+                <div style="text-align: left; margin-top: 20px; padding: 10px;">
+                    <ons-card>
+                        <ons-list>
+                            <ons-list-header>Pemesanan</ons-list-header>
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label for="id">Id Pesanan</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="id" placeholder=""></ons-input>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+                           
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label>Batik</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-select id="Batik">
+                                            <option value="-">-</option>
+                                            <option value="batik mega mendung">BATIK MEGA MENDUNG</option>
+                                            <option value="batik keraton">BATIK KERATON</option>
+                                            <option value="batik parang">BATIK PARANG</option>
+                                            <option value="batik simbut">BATIK SIMBUT</option>
+                                            <option value="batik sogan">BATIK SOGAN</option>
+                                            <option value="batik gentongan">BATIK GENTONGAN</option>
+                                            <option value="batik sedapur">BATIK SEDAPUR</option>
+    
+                                        </ons-select>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+    
+    
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label>Size</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-select id="Size">
+                                            <option value="-">-</option>
+    
+                                            <option value="M">M (48.000)</option>
+                                            <option value="L">L (52.000)</option>
+                                            <option value="XL">XL (63.000)</option>
+                                            <option value="XXL">XXL (74.000)</option>
+                                            <option value="XXXL">XXXL (87.000)</option>
+                                        </ons-select>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+    
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label>Pilihan Warna</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-select id="Pilihan_Warna">
+                                            <option value="-">-</option>
+                                            <option value="biru">Biru</option>
+                                            <option value="merah">Merah</option>
+                                            <option value="hitam">Hitam</option>
+                                            <option value="coklat">Coklat</option>
+                                            <option value="emas">Emas</option>
+                                            <option value="kuning">Kuning</option>
+                                        </ons-select>
+                                    </ons-col>
+                                </ons-row>
+                            </ons-list-item>
+    
+    
+                            <ons-list-item>
+                                <ons-row>
+                                    <ons-col width="25%">
+                                        <label>Jumlah</label>
+                                    </ons-col>
+                                    <ons-col>
+                                        <ons-input id="jumlah" placeholder="Jumlah"></ons-input>
+                                </ons-row>
+                            </ons-list-item>
+    
+                        </ons-list>
+                    </ons-card>
+                    <div style="text-align: center; padding: 7px;" id="checkout">
+                        <ons-button modifier="large" onclick="simpan()">CHECKOUT</ons-button>
+                    </div>
+    
+    
+    
+    
+                </div>
+    
+            </ons-page>
+        </template>
+    </ons-page>
     </template>
+
+
 
 
 </body>

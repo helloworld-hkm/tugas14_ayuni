@@ -23,10 +23,10 @@
                         Home
                     </ons-list-item>
                     <ons-list-item onclick="fn.load('shop.html')" tappable>
-                        Settings
+                        Shop
                     </ons-list-item>
-                    <ons-list-item onclick="fn.load('about.html')" tappable>
-                        About
+                    <ons-list-item onclick="fn.load('user.html')" tappable>
+                        User
                     </ons-list-item>
                 </ons-list>
             </ons-page>
@@ -56,6 +56,61 @@
             </div>
         </ons-page>
     </template>
+    <template id="user.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button onclick="fn.open()">
+                        <ons-icon icon="md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                    User Profile
+                </div>
+            </ons-toolbar>
+            
+            <ons-list >
+                <ons-list-item>
+                  <div class="left">
+                    <img class="list-item__thumbnail" icon="md-face" src="foto/ayaaang.jpg">
+                  </div>
+                  <div class="center">
+                    <span class="list-item__title"> ayrafah</span><span class="list-item__subtitle"> member Gold</span>
+                </ons-list-item>
+                </div>
+                </ons-list-item>
+                <ons-list-item>
+                  <div class="left">
+                    <ons-icon icon="md-email">
+                  </div>
+                  <div class="center">
+                    <ons-input value="haiayra@gmail.com"></ons-input>
+                  </div>
+                </ons-list-item>
+                <ons-list-item>
+                  <div class="left">
+                    <ons-icon icon="fa-phone">
+                  </div>
+                  <div class="center">
+                  <ons-input value="0823 2437 5565"></ons-input>
+                  </div>
+                </ons-list-item>
+                <ons-list-item>
+                  <div class="left">
+                    <ons-icon icon="md-home">
+                  </div>
+                  <div class="center">
+                   <ons-input value="Jl. Kena Roasting No.9999999 Tertampar Kenyataan"> </ons-input>
+                  </div>
+                </ons-list-item>
+                <ons-list-item>
+                  <div class="center" id="logout">
+                    <ons-button onclick="window.location.reload()" modifier="large">Logout</ons-button>
+                  </div>
+                </ons-list-item>
+              </ons-list>
+        </ons-page>
+    </template>
 
     <template id="shop.html">
         <ons-page>
@@ -70,7 +125,7 @@
                 </div>
 
             </ons-toolbar>
-            <ons-tabbar swipeable position="auto">
+            <ons-tabbar id="tabbar" swipeable position="auto">
                 <ons-tab page="daftar.html" label=" Batik" icon="md-collection-item">
                 </ons-tab>
                 <ons-tab page="pesan.html" label="Pesan" icon="md-shopping-cart-plus">
@@ -89,7 +144,7 @@
                 </div>
                 <div class="content">
                     <div>
-                        <ons-button onclick="fn.load('Deskripsi.html')">Lihat Deskripsi</ons-button>
+                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
                     </div>
                 </div>
             </ons-card>
@@ -101,7 +156,7 @@
                 </div>
                 <div class="content">
                     <div>
-                        <ons-button onclick="fn.load('Deskripsi.html')">Lihat Deskripsi</ons-button>
+                               <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
                     </div>
                 </div>
             </ons-card>
@@ -113,7 +168,7 @@
                 </div>
                 <div class="content">
                     <div>
-                        <ons-button onclick="fn.load('Deskripsi.html')">Lihat Deskripsi</ons-button>
+                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
                     </div>
                 </div>
             </ons-card>
@@ -125,7 +180,7 @@
                 </div>
                 <div class="content">
                     <div>
-                        <ons-button onclick="fn.load('Deskripsi.html')">Lihat Deskripsi</ons-button>
+                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
                     </div>
                 </div>
             </ons-card>
@@ -137,7 +192,7 @@
                 </div>
                 <div class="content">
                     <div>
-                        <ons-button onclick="fn.load('Deskripsi.html')">Lihat Deskripsi</ons-button>
+                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
                     </div>
                 </div>
             </ons-card>
@@ -149,7 +204,7 @@
                 </div>
                 <div class="content">
                     <div>
-                        <ons-button onclick="fn.load('Deskripsi.html')">Lihat Deskripsi</ons-button>
+                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
                     </div>
                 </div>
             </ons-card>
@@ -161,7 +216,7 @@
                 </div>
                 <div class="content">
                     <div>
-                        <ons-button onclick="fn.load('Deskripsi.html')">Lihat Deskripsi</ons-button>
+                        <ons-button onclick="fn.load('detail.html')">Lihat Deskripsi</ons-button>
                     </div>
                 </div>
             </ons-card>
@@ -251,26 +306,13 @@
 
                     </ons-list>
                 </ons-card>
-                <div style="text-align: center; padding: 7px;" id="checkout">
-                    <ons-button modifier="large" onclick="tambah_data()">Konfirmasi Pesanan</ons-button>
-                </div>
-
-                <ons-card>
-                    <div class="title">Riwayat Pemesanan Batik</div>
-                    <div class="content">
-                        <ons-list>
-
-                            <span id="list-data">
-                            </span>
-                        </ons-list>
-                    </div>
-                </ons-card>
+            
 
 
             </div>
             <script>
           
-                document.getElementById('desc_id').value =localStorage.getItem("nama");
+                document.getElementById('desc_id').value =localStorage.getItem("id");
                 document.getElementById('desc_batik').value =localStorage.getItem("nama");
                 document.getElementById('desc_size').value =localStorage.getItem("size");
                 document.getElementById('desc_jumlah').value =localStorage.getItem("jumlah");
@@ -278,6 +320,79 @@
                 document.getElementById('desc_total').value =localStorage.getItem("total");
                 document.getElementById('desc_warna').value =localStorage.getItem("warna");
             </script>
+        </ons-page>
+
+    </template>
+    <template id="detail.html">
+        <ons-page id="Tab2">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button onclick="fn.load('shop.html')">
+                        <ons-icon icon="md-arrow-left"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">
+                   Detail Produk
+                </div>
+
+            </ons-toolbar>
+           <ons-card>
+            <div class="">
+             
+                <ul>
+                <li>Bahan katun Halus</li>
+                <li>Jahitan Rapih</li>
+                <li>Murah Berkualitas</li>
+              </ul>
+                <h4>Size:M,L,XL,XXL,XXXL</h4>
+               <ons-row>
+                <ons-col width="15%">
+                  M
+                </ons-col>
+                <ons-col>
+                  : LD 98 Cm
+                </ons-col>
+               </ons-row>
+               <ons-row>
+                <ons-col width="15%">
+                  L
+                </ons-col>
+                <ons-col>
+                  : LD 102 Cm
+                </ons-col>
+               </ons-row>
+               <ons-row>
+                <ons-col width="15%">
+                  XL
+                </ons-col>
+                <ons-col>
+                  : LD 104 Cm
+                </ons-col>
+               </ons-row>
+               <ons-row>
+                <ons-col width="15%">
+                  XXL
+                </ons-col>
+                <ons-col>
+                  : LD 108 Cm
+                </ons-col>
+               </ons-row>
+  
+                <h4>Pilihan Warna</h4>
+                <ul>
+                  <li>Biru</li>
+                  <li>Merah</li>
+                  <li>Coklat</li>
+                  <li>Emas</li>
+                  <li>Hitam</li>
+                  <li>Kuning</li>
+                </ul>
+                
+  
+  
+              </div>
+           </ons-card>
+           
         </ons-page>
 
     </template>

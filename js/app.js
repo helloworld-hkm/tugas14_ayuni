@@ -43,6 +43,7 @@ function simpan() {
       localStorage.setItem("tanggal",tanggal);
       localStorage.setItem("total",total);
       localStorage.setItem("warna",pilihan_warna);
+      document.getElementById('tabbar').setActiveTab(1);
       fn.load('shop.html')
 }
   
